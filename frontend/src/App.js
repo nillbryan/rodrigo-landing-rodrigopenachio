@@ -1,33 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "../src/styles/tokens.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Benefits from "./components/Benefits";
-import HowItWorks from "./components/HowItWorks";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
-import FAQ from "./components/FAQ";
-import FinalCTA from "./components/FinalCTA";
-import LeadForm from "./components/LeadForm";
-import Footer from "./components/Footer";
+import { storeUTMParams } from "./utils/analytics";
+import CookieBanner from "./components/CookieBanner";
+import LandingPage from "./pages/LandingPage";
+import ThankYou from "./pages/ThankYou";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function App() {
+  useEffect(() => {
+    // Store UTM parameters on initial load
+    storeUTMParams();
+  }, []);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Benefits />
-      <HowItWorks />
-      <Pricing />
-      <Testimonials />
-      <FAQ />
-      <FinalCTA />
-      <LeadForm />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/obrigado" element={<ThankYou />} />
+          <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+          <Route path="/termos" element={<Terms />} />
+        </Routes>
+        <CookieBanner />
+      </div>
+    </BrowserRouter>
   );
 }
 
