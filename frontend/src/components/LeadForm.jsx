@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { formOptions } from '../data/mock';
+import { getStoredUTMParams, trackEvent } from '../utils/analytics';
+
+const FORM_ENDPOINT = process.env.REACT_APP_FORM_ENDPOINT;
+const ZAPIER_WEBHOOK = process.env.REACT_APP_SHEET_ZAPIER_WEBHOOK;
+const HUBSPOT_PORTAL_ID = process.env.REACT_APP_HUBSPOT_PORTAL_ID;
+const HUBSPOT_FORM_GUID = process.env.REACT_APP_HUBSPOT_FORM_GUID;
 
 const LeadForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,7 +24,7 @@ const LeadForm = () => {
     consent: false
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -37,28 +45,82 @@ const LeadForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-      // In real implementation, this would send to backend
-      setIsSubmitted(true);
-      // Reset form after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          city: '',
-          objective: '',
-          patrimony: '',
-          experience: '',
-          international: '',
-          crypto: '',
-          consent: false
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      // Get UTM params
+      const utmParams = getStoredUTMParams();
+      
+      // Prepare payload with hidden fields
+      const payload = {
+        ...formData,
+        lead_source: 'email_diagnostico',
+        ...utmParams,
+        timestamp: new Date().toISOString(),
+        page_url: window.location.href,
+        referrer: document.referrer || 'direct'
+      };
+
+      // Send to Formspree
+      if (FORM_ENDPOINT) {
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
         });
-      }, 5000);
+      }
+
+      // Send to Zapier Webhook (Google Sheets)
+      if (ZAPIER_WEBHOOK) {
+        fetch(ZAPIER_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.error('Zapier webhook error:', err));
+      }
+
+      // Send to HubSpot (optional)
+      if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_GUID) {
+        const hubspotFields = Object.entries(payload).map(([key, value]) => ({
+          name: key,
+          value: String(value)
+        }));
+
+        fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: hubspotFields,
+            context: {
+              pageUri: window.location.href,
+              pageName: document.title
+            }
+          })
+        }).catch(err => console.error('HubSpot error:', err));
+      }
+
+      // Track event
+      trackEvent('lead_submitted', {
+        lead_source: 'email_diagnostico',
+        objective: formData.objective,
+        patrimony: formData.patrimony
+      });
+
+      // Redirect to thank you page
+      navigate('/obrigado?source=email_diagnostico');
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setErrors({ general: 'Erro ao enviar formulário. Tente novamente.' });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
