@@ -1,0 +1,146 @@
+import React from 'react';
+import { Check, Star } from 'lucide-react';
+import { plans } from '../data/mock';
+
+const Pricing = () => {
+  const scrollToContact = () => {
+    const element = document.querySelector('#contato');
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section
+      id="planos"
+      className="relative py-24"
+      style={{ background: 'var(--bg-primary)' }}
+    >
+      <div className="max-w-[1400px] mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16 space-y-4">
+          <h2
+            className="text-4xl lg:text-5xl font-bold"
+            style={{
+              color: 'var(--text-primary)',
+              letterSpacing: '-0.02em'
+            }}
+          >
+            Planos e Preços
+          </h2>
+          <p
+            className="text-lg max-w-2xl mx-auto"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            Escolha o plano que melhor se adapta aos seus objetivos
+          </p>
+        </div>
+
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`glass-effect p-8 transition-all duration-300 hover:translate-y-[-8px] relative ${
+                plan.recommended ? 'ring-2' : ''
+              }`}
+              style={{
+                borderRadius: '2px',
+                boxShadow: plan.recommended ? 'var(--shadow-glow-primary)' : 'var(--shadow-sm)',
+                ringColor: plan.recommended ? 'var(--primary)' : 'transparent'
+              }}
+            >
+              {/* Recommended Badge */}
+              {plan.recommended && (
+                <div
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 flex items-center gap-2"
+                  style={{
+                    background: 'var(--gradient-primary)',
+                    color: 'var(--bg-primary)',
+                    borderRadius: '2px'
+                  }}
+                >
+                  <Star size={16} fill="currentColor" />
+                  <span className="text-sm font-bold">Recomendado</span>
+                </div>
+              )}
+
+              {/* Plan Name */}
+              <h3
+                className="text-2xl font-bold mb-2"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {plan.name}
+              </h3>
+
+              {/* Price */}
+              <div className="mb-6">
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className="text-4xl font-bold"
+                    style={{ color: 'var(--primary)' }}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    className="text-lg"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    /{plan.period}
+                  </span>
+                </div>
+              </div>
+
+              {/* Features */}
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <Check
+                      size={20}
+                      className="flex-shrink-0 mt-0.5"
+                      style={{ color: 'var(--secondary)' }}
+                    />
+                    <span
+                      className="text-base"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA Button */}
+              <button
+                onClick={scrollToContact}
+                className="w-full py-4 text-base font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                style={{
+                  background: plan.recommended ? 'var(--gradient-primary)' : 'rgba(255, 255, 255, 0.08)',
+                  color: plan.recommended ? 'var(--bg-primary)' : 'var(--text-primary)',
+                  border: plan.recommended ? 'none' : '1px solid var(--border-medium)',
+                  borderRadius: '0px'
+                }}
+              >
+                Começar Agora
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Disclaimer */}
+        <p
+          className="text-center text-sm mt-12 max-w-3xl mx-auto"
+          style={{ color: 'var(--text-dim)' }}
+        >
+          Todos os planos incluem consultoria personalizada sem conflitos de interesse.
+          Preços sujeitos a ajustes conforme complexidade do portfólio.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export default Pricing;
