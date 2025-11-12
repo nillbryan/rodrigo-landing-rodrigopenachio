@@ -1,6 +1,9 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Shield } from 'lucide-react';
 import { hero } from '../data/mock';
+import { trackEvent } from '../utils/analytics';
+
+const CALENDLY_URL = process.env.REACT_APP_CALENDLY_URL;
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -11,6 +14,13 @@ const Hero = () => {
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
+  };
+
+  const handleCalendlyClick = () => {
+    trackEvent('calendly_clicked', {
+      location: 'hero',
+      cta: 'agendar_triagem'
+    });
   };
 
   return (
