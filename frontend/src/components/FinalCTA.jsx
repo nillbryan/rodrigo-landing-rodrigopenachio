@@ -1,5 +1,8 @@
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
+
+const CALENDLY_URL = process.env.REACT_APP_CALENDLY_URL;
 
 const FinalCTA = () => {
   const scrollToContact = () => {
@@ -10,6 +13,13 @@ const FinalCTA = () => {
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
+  };
+
+  const handleCalendlyClick = () => {
+    trackEvent('calendly_clicked', {
+      location: 'final_cta',
+      cta: 'agendar_triagem'
+    });
   };
 
   return (
