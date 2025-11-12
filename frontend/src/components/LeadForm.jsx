@@ -489,10 +489,26 @@ const LeadForm = () => {
             )}
           </div>
 
+          {/* Error Message */}
+          {errors.general && (
+            <div
+              className="p-4 text-center"
+              style={{
+                background: 'rgba(255, 90, 113, 0.1)',
+                border: '1px solid var(--accent-danger)',
+                borderRadius: '2px',
+                color: 'var(--accent-danger)'
+              }}
+            >
+              {errors.general}
+            </div>
+          )}
+
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+            disabled={isSubmitting}
+            className="w-full group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             style={{
               background: 'var(--gradient-primary)',
               color: 'var(--bg-primary)',
@@ -500,8 +516,17 @@ const LeadForm = () => {
               boxShadow: 'var(--shadow-glow-primary)'
             }}
           >
-            Enviar Solicitação
-            <Send size={20} className="transition-transform group-hover:translate-x-1" />
+            {isSubmitting ? (
+              <>
+                <Loader2 size={20} className="animate-spin" />
+                Enviando...
+              </>
+            ) : (
+              <>
+                Enviar Solicitação
+                <Send size={20} className="transition-transform group-hover:translate-x-1" />
+              </>
+            )}
           </button>
         </form>
       </div>
