@@ -99,20 +99,20 @@ const Footer = () => {
               Legal
             </h3>
             <div className="space-y-2">
-              <a
-                href="#"
+              <Link
+                to="/politica-de-privacidade"
                 className="block text-sm transition-colors duration-300 hover:text-[var(--primary)]"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 Política de Privacidade
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/termos"
                 className="block text-sm transition-colors duration-300 hover:text-[var(--primary)]"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 Termos de Uso
-              </a>
+              </Link>
             </div>
           </div>
         </div>
