@@ -136,50 +136,6 @@ const LeadForm = () => {
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <section
-        id="contato"
-        className="relative py-24"
-        style={{ background: 'var(--bg-elevated-1)' }}
-      >
-        <div className="max-w-[800px] mx-auto px-6">
-          <div
-            className="glass-effect p-12 text-center"
-            style={{
-              borderRadius: '2px',
-              border: '1px solid var(--secondary)'
-            }}
-          >
-            <CheckCircle2
-              size={64}
-              className="mx-auto mb-6"
-              style={{ color: 'var(--secondary)' }}
-            />
-            <h3
-              className="text-3xl font-bold mb-4"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              Obrigado!
-            </h3>
-            <p
-              className="text-lg mb-6"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              Sua solicitação foi recebida. Entraremos em contato em até 24 horas.
-            </p>
-            <p
-              className="text-base"
-              style={{ color: 'var(--text-dim)' }}
-            >
-              Você também receberá um e-mail com os próximos passos.
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section
       id="contato"
