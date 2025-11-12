@@ -91,19 +91,38 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
-                onClick={scrollToContact}
-                className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-                style={{
-                  background: 'var(--gradient-primary)',
-                  color: 'var(--bg-primary)',
-                  borderRadius: '0px',
-                  boxShadow: 'var(--shadow-glow-primary)'
-                }}
-              >
-                {hero.ctaPrimary}
-                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-              </button>
+              {CALENDLY_URL ? (
+                <a
+                  href={`${CALENDLY_URL}?utm_source=cta_agendar&utm_medium=hero&utm_campaign=landing`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleCalendlyClick}
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  style={{
+                    background: 'var(--gradient-primary)',
+                    color: 'var(--bg-primary)',
+                    borderRadius: '0px',
+                    boxShadow: 'var(--shadow-glow-primary)'
+                  }}
+                >
+                  {hero.ctaPrimary}
+                  <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+                </a>
+              ) : (
+                <button
+                  onClick={scrollToContact}
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  style={{
+                    background: 'var(--gradient-primary)',
+                    color: 'var(--bg-primary)',
+                    borderRadius: '0px',
+                    boxShadow: 'var(--shadow-glow-primary)'
+                  }}
+                >
+                  {hero.ctaPrimary}
+                  <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+                </button>
+              )}
               <button
                 onClick={scrollToContact}
                 className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:bg-white/10"
