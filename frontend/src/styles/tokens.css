@@ -1,0 +1,83 @@
+/* Design Tokens - Rodrigo Penachio Landing Page */
+
+:root {
+  /* Backgrounds - Dark Theme Foundation */
+  --bg-primary: #0B0D12;
+  --bg-elevated-1: #121624;
+  --bg-elevated-2: #171B2E;
+  --bg-overlay: rgba(255, 255, 255, 0.08);
+  
+  /* Text - High Contrast */
+  --text-primary: #F4F6FB;
+  --text-secondary: #9AA3B2;
+  --text-dim: #6B7280;
+  
+  /* Primary - Golden (Premium/Wealth) */
+  --primary: #F5C242;
+  --primary-hover: #FFCC4D;
+  --primary-800: #C99E2E;
+  --primary-900: #8C6E1F;
+  --primary-glow: rgba(245, 194, 66, 0.25);
+  
+  /* Secondary - Cyan-Green (Tech/Success) */
+  --secondary: #00FFD1;
+  --secondary-700: #00C3A1;
+  --secondary-glow: rgba(0, 255, 209, 0.2);
+  
+  /* Accent Colors */
+  --accent-info: #5AA2FF;
+  --accent-danger: #FF5A71;
+  --accent-warning: #FF9E47;
+  --accent-success: #00FFD1;
+  
+  /* Borders */
+  --border-subtle: #23283A;
+  --border-medium: rgba(255, 255, 255, 0.15);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(90deg, #FFCC4D 0%, #F0B828 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(11, 13, 18, 0) 0%, rgba(11, 13, 18, 0.9) 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 20px var(--primary-glow);
+  --shadow-glow-secondary: 0 0 20px var(--secondary-glow);
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+  
+  /* Border Radius - Sharp Corners per Guidelines */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+  --transition-smooth: all 0.4s ease-in-out;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(18, 22, 36, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-effect-strong {
+  background: rgba(18, 22, 36, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-medium);
+}
