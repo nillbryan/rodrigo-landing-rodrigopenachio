@@ -23,7 +23,7 @@ export const hero = {
 
 export const about = {
   title: "Quem conduz sua estratégia",
-  description: "Rodrigo Penachio é consultor de investimentos com foco em alocação inteligente e educação financeira prática. Atua de forma independente, sem conflitos comerciais, ajudando clientes a estruturarem carteiras diversificadas em B3 (ações/FIIs), Renda Fixa, ETFs globais (S&P 500, etc.) e Cripto responsável (BTC/ETH). Metodologia simples, replicável e orientada a metas.",
+  description: "Rodrigo Penachio oferece Consultoria de Investimentos com foco em alocação inteligente e educação financeira prática. Atua de forma independente, sem conflitos comerciais, ajudando clientes a estruturarem carteiras diversificadas em B3 (ações/FIIs), Renda Fixa, ETFs globais (S&P 500, etc.) e Cripto responsável (BTC/ETH). Metodologia simples, replicável e orientada a metas.",
   badges: ["Independente", "Carteiras por objetivo", "Brasil + Exterior", "Linguagem clara"]
 };
 
