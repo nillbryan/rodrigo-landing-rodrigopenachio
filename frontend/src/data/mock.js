@@ -80,38 +80,40 @@ export const howItWorks = [
 export const plans = [
   {
     name: "Start",
-    price: "A definir",
-    period: "mês",
+    price: "R$ 2.500",
+    period: "ano",
     recommended: false,
     features: [
       "1 Diagnóstico inicial",
       "Carteira base por perfil (documento PDF)",
-      "1 revisão trimestral",
+      "1 revisão semestral",
       "Suporte por e-mail"
     ]
   },
   {
     name: "Essencial",
-    price: "A definir",
-    period: "mês",
+    price: "R$ 3.500",
+    period: "ano",
     recommended: true,
     features: [
       "Tudo do Start",
       "Carteira personalizada por objetivos",
-      "Revisão mensal e alertas de rebalance",
+      "Revisão trimestral e alertas de rebalance",
       "Checklists de execução e modelo de aportes",
       "Dúvidas por WhatsApp horário comercial"
     ]
   },
   {
-    name: "Prime",
-    price: "A definir",
-    period: "mês",
+    name: "Wealth",
+    price: "0,5% do patrimônio",
+    period: "ano",
+    subtitle: "a partir de 800 mil",
     recommended: false,
     features: [
-      "Tudo do Essencial",
+      "Atendimento individualizado",
       "Reuniões bimestrais 1:1",
-      "Simulações 'e se?' (câmbio/juros)",
+      "Carteira personalizada por objetivos",
+      "Stock Picking + opções",
       "Prioridade no atendimento"
     ]
   }
