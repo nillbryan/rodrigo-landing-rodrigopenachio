@@ -25,7 +25,7 @@ const Testimonials = () => {
             className="text-lg max-w-2xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Depoimentos reais de quem já investe com método
+            Exemplos ilustrativos de perfis atendidos (para referência)
           </p>
         </div>
 
