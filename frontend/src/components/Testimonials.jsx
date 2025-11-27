@@ -68,10 +68,18 @@ const Testimonials = () => {
                 </div>
                 <div
                   className="text-sm mt-1"
-                  style={{ color: 'var(--text-dim)' }}
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   {testimonial.role}
                 </div>
+                {testimonial.location && (
+                  <div
+                    className="text-sm mt-0.5"
+                    style={{ color: 'var(--text-dim)' }}
+                  >
+                    {testimonial.location}
+                  </div>
+                )}
               </div>
             </div>
           ))}
