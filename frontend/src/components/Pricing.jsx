@@ -76,6 +76,16 @@ const Pricing = () => {
                 {plan.name}
               </h3>
 
+              {/* Subtitle (for Wealth plan) */}
+              {plan.subtitle && (
+                <p
+                  className="text-sm mb-3"
+                  style={{ color: 'var(--text-dim)' }}
+                >
+                  {plan.subtitle}
+                </p>
+              )}
+
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-baseline gap-2">
