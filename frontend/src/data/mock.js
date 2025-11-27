@@ -12,7 +12,7 @@ export const hero = {
   headline: "Investir com clareza. Crescer com método.",
   subheadline: "Consultoria independente para montar e evoluir seu portfólio — com foco em crescimento, renda e proteção.",
   bullets: [
-    "Carteiras alinhadas às suas metas (Brasil + EUA + Cripto com parcimônia)",
+    "Carteiras alinhadas às suas metas (Brasil + EUA + Cripto*)",
     "Estratégia clara, execução simples, acompanhamento periódico",
     "Zero promessas milagrosas. Só técnica, disciplina e transparência"
   ],
