@@ -66,6 +66,9 @@ const LeadForm = () => {
     }
   };
 
+  // Check if should use embed or button
+  const useEmbed = EXTERNAL_CONFIG.ENABLE_TALLY_EMBED && EXTERNAL_CONFIG.TALLY_IFRAME_SRC;
+
   return (
     <section
       id="contato"
