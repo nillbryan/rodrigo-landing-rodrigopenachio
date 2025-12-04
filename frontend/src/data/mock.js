@@ -134,7 +134,7 @@ export const faqs = [
   },
   {
     question: "Qual o valor mínimo para começar?",
-    answer: "Com pouco capital já dá para montar uma base. Ajustamos a complexidade da carteira ao seu tíquete e metas."
+    answer: "Com pouco capital já dá para montar uma base. Ajustamos a complexidade da carteira ao seu patrimônio e metas."
   },
   {
     question: "A consultoria é independente?",
