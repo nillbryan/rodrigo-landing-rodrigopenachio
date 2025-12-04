@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Send, CheckCircle2, Loader2, ExternalLink } from 'lucide-react';
 import { formOptions } from '../data/mock';
-import { getStoredUTMParams, trackEvent } from '../utils/analytics';
-
-const FORM_ENDPOINT = process.env.REACT_APP_FORM_ENDPOINT;
-const ZAPIER_WEBHOOK = process.env.REACT_APP_SHEET_ZAPIER_WEBHOOK;
-const HUBSPOT_PORTAL_ID = process.env.REACT_APP_HUBSPOT_PORTAL_ID;
-const HUBSPOT_FORM_GUID = process.env.REACT_APP_HUBSPOT_FORM_GUID;
+import { trackEvent } from '../utils/analytics';
+import { EXTERNAL_CONFIG, isTallyConfigured } from '../config/external';
 
 const LeadForm = () => {
   const navigate = useNavigate();
