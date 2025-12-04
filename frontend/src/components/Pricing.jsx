@@ -44,29 +44,12 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`glass-effect p-8 transition-all duration-300 hover:translate-y-[-8px] relative ${
-                plan.recommended ? 'ring-2' : ''
-              }`}
+              className="glass-effect p-8 transition-all duration-300 hover:translate-y-[-8px] relative"
               style={{
                 borderRadius: '2px',
-                boxShadow: plan.recommended ? 'var(--shadow-glow-primary)' : 'var(--shadow-sm)',
-                ringColor: plan.recommended ? 'var(--primary)' : 'transparent'
+                boxShadow: 'var(--shadow-sm)'
               }}
             >
-              {/* Recommended Badge */}
-              {plan.recommended && (
-                <div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 flex items-center gap-2"
-                  style={{
-                    background: 'var(--gradient-primary)',
-                    color: 'var(--bg-primary)',
-                    borderRadius: '2px'
-                  }}
-                >
-                  <Star size={16} fill="currentColor" />
-                  <span className="text-sm font-bold">Recomendado</span>
-                </div>
-              )}
 
               {/* Plan Name */}
               <h3
