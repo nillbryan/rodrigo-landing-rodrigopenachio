@@ -82,7 +82,6 @@ export const plans = [
     name: "Start",
     price: "R$ 2.500",
     period: "ano",
-    recommended: false,
     features: [
       "1 Diagnóstico inicial",
       "Carteira base por perfil (documento PDF)",
@@ -94,12 +93,11 @@ export const plans = [
     name: "Essencial",
     price: "R$ 3.500",
     period: "ano",
-    recommended: true,
     features: [
       "Tudo do Start",
       "Carteira personalizada por objetivos",
       "Revisão trimestral e alertas de rebalance",
-      "Checklists de execução e modelo de aportes",
+      "Checklists de execução e estratégia de aportes",
       "Dúvidas por WhatsApp horário comercial"
     ]
   },
@@ -107,8 +105,7 @@ export const plans = [
     name: "Wealth",
     price: "0,5% do patrimônio",
     period: "ano",
-    subtitle: "a partir de 800 mil",
-    recommended: false,
+    subtitle: "A partir de R$ 800 mil",
     features: [
       "Atendimento individualizado",
       "Reuniões bimestrais 1:1",
