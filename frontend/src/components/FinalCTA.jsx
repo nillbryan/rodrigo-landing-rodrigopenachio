@@ -43,7 +43,7 @@ const FinalCTA = () => {
             letterSpacing: '-0.02em'
           }}
         >
-          Pronto para investir com método, sem promessas?
+          Pronto para investir com método sem promessas?
         </h2>
         <p
           className="text-xl mb-10 leading-relaxed"
