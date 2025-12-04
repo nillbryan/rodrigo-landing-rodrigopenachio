@@ -154,6 +154,9 @@ const Hero = () => {
                 alt="Rodrigo Penachio"
                 className="w-full h-full object-cover"
                 style={{ filter: 'grayscale(20%)' }}
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
               />
               {/* Overlay Gradient */}
               <div
