@@ -18,7 +18,7 @@ export const hero = {
   ],
   ctaPrimary: "Agendar triagem gratuita",
   ctaSecondary: "Receber diagnóstico inicial",
-  profileImage: "https://customer-assets.emergentagent.com/job_invest-rodrigo/artifacts/q3g53x1x_rodrigo-hero.png"
+  profileImage: "https://customer-assets.emergentagent.com/job_invest-rodrigo/artifacts/his6l6pq_Gemini_Generated_Image_x4ilxix4ilxix4il.PNG"
 };
 
 export const about = {
