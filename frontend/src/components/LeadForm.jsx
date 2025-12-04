@@ -40,82 +40,17 @@ const LeadForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    try {
-      // Get UTM params
-      const utmParams = getStoredUTMParams();
-      
-      // Prepare payload with hidden fields
-      const payload = {
-        ...formData,
-        lead_source: 'email_diagnostico',
-        ...utmParams,
-        timestamp: new Date().toISOString(),
-        page_url: window.location.href,
-        referrer: document.referrer || 'direct'
-      };
-
-      // Send to Formspree
-      if (FORM_ENDPOINT) {
-        await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-      }
-
-      // Send to Zapier Webhook (Google Sheets)
-      if (ZAPIER_WEBHOOK) {
-        fetch(ZAPIER_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).catch(err => console.error('Zapier webhook error:', err));
-      }
-
-      // Send to HubSpot (optional)
-      if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_GUID) {
-        const hubspotFields = Object.entries(payload).map(([key, value]) => ({
-          name: key,
-          value: String(value)
-        }));
-
-        fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            fields: hubspotFields,
-            context: {
-              pageUri: window.location.href,
-              pageName: document.title
-            }
-          })
-        }).catch(err => console.error('HubSpot error:', err));
-      }
-
+  const handleTallyOpen = () => {
+    if (isTallyConfigured()) {
       // Track event
-      trackEvent('lead_submitted', {
-        lead_source: 'email_diagnostico',
-        objective: formData.objective,
-        patrimony: formData.patrimony
+      trackEvent('tally_form_opened', {
+        source: 'lead_form_section'
       });
-
-      // Redirect to thank you page
-      navigate('/obrigado?source=email_diagnostico');
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setErrors({ general: 'Erro ao enviar formulário. Tente novamente.' });
-    } finally {
-      setIsSubmitting(false);
+      
+      // Open Tally in new tab
+      window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
+    } else {
+      alert('Formulário ainda não configurado. Configure TALLY_URL em /src/config/external.js');
     }
   };
 
