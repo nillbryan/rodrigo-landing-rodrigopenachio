@@ -98,14 +98,13 @@ export const plans = [
       "Carteira personalizada por objetivos",
       "Revisão trimestral e alertas de rebalance",
       "Checklists de execução e estratégia de aportes",
-      "Dúvidas por WhatsApp horário comercial"
+      "Dúvidas por WhatsApp (horário comercial)"
     ]
   },
   {
     name: "Wealth",
-    price: "0,5% do patrimônio",
-    period: "ano",
-    subtitle: "A partir de R$ 800 mil",
+    price: "a partir de R$ 800 mil",
+    period: "0,5% do patrimônio/ano",
     features: [
       "Atendimento individualizado",
       "Reuniões bimestrais 1:1",
