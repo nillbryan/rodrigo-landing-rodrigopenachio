@@ -95,12 +95,32 @@ const LeadForm = () => {
           </p>
         </div>
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="glass-effect p-8 space-y-6"
-          style={{ borderRadius: '2px' }}
-        >
+        {/* Tally Integration */}
+        {useEmbed ? (
+          /* Tally Embed (iframe) */
+          <div
+            className="glass-effect p-8"
+            style={{ borderRadius: '2px' }}
+          >
+            <iframe
+              src={EXTERNAL_CONFIG.TALLY_IFRAME_SRC}
+              width="100%"
+              height="600"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              title="Formulário de Contato"
+              style={{ borderRadius: '2px' }}
+            >
+              Carregando...
+            </iframe>
+          </div>
+        ) : (
+          /* Tally Button (default) */
+          <div
+            className="glass-effect p-12 text-center space-y-6"
+            style={{ borderRadius: '2px' }}
+          >
           {/* Name & Email */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
