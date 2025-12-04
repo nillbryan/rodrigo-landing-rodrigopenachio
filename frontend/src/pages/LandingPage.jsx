@@ -8,8 +8,9 @@ import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
-import LeadForm from '../components/LeadForm';
+import LeadForm from '../components/LeadFormNew';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const LandingPage = () => {
   return (
@@ -25,6 +26,7 @@ const LandingPage = () => {
       <FinalCTA />
       <LeadForm />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };
