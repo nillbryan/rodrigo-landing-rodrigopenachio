@@ -2,8 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, Shield } from 'lucide-react';
 import { hero } from '../data/mock';
 import { trackEvent } from '../utils/analytics';
-
-const CALENDLY_URL = process.env.REACT_APP_CALENDLY_URL;
+import { EXTERNAL_CONFIG, isTallyConfigured, getWhatsAppLink, isWhatsAppConfigured } from '../config/external';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -16,11 +15,30 @@ const Hero = () => {
     }
   };
 
-  const handleCalendlyClick = () => {
-    trackEvent('calendly_clicked', {
+  const handlePrimaryCTA = () => {
+    trackEvent('cta_clicked', {
       location: 'hero',
-      cta: 'agendar_triagem'
+      cta: 'primary'
     });
+
+    // Priority: WhatsApp > Tally > Scroll to form
+    if (isWhatsAppConfigured()) {
+      window.open(getWhatsAppLink(), '_blank', 'noopener,noreferrer');
+    } else if (isTallyConfigured()) {
+      window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
+    } else {
+      scrollToContact();
+    }
+  };
+
+  const handleSecondaryCTA = () => {
+    trackEvent('cta_clicked', {
+      location: 'hero',
+      cta: 'secondary'
+    });
+
+    // Secondary CTA always scrolls to form section
+    scrollToContact();
   };
 
   return (
