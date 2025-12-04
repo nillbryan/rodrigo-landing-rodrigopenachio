@@ -8,7 +8,7 @@ import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
-import LeadForm from '../components/LeadFormNew';
+import LeadForm from '../components/LeadForm';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 
