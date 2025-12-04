@@ -55,31 +55,17 @@ const Testimonials = () => {
                 "{testimonial.text}"
               </p>
 
-              {/* Author */}
+              {/* Author Info */}
               <div
                 className="pt-4 border-t"
                 style={{ borderColor: 'var(--border-subtle)' }}
               >
                 <div
-                  className="font-semibold"
-                  style={{ color: 'var(--text-primary)' }}
-                >
-                  {testimonial.author}
-                </div>
-                <div
-                  className="text-sm mt-1"
+                  className="text-sm"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  {testimonial.role}
+                  {testimonial.role} — {testimonial.location}
                 </div>
-                {testimonial.location && (
-                  <div
-                    className="text-sm mt-0.5"
-                    style={{ color: 'var(--text-dim)' }}
-                  >
-                    {testimonial.location}
-                  </div>
-                )}
               </div>
             </div>
           ))}
