@@ -76,3 +76,11 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--bg-primary) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+/* High-quality image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  -ms-interpolation-mode: nearest-neighbor;
+}
