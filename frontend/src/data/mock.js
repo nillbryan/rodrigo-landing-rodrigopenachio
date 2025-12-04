@@ -146,7 +146,7 @@ export const faqs = [
   },
   {
     question: "Como é o acompanhamento?",
-    answer: "Revisões periódicas + alertas de rebalance. Tudo registrado no seu Painel do Cliente (Kanban simples/Google Sheets)."
+    answer: "Revisões periódicas + alertas de rebalance. Tudo registrado no seu Painel do Cliente."
   }
 ];
 
