@@ -150,19 +150,16 @@ export const faqs = [
 export const testimonials = [
   {
     text: "Eu tinha investimentos soltos e sem direção. Com o diagnóstico e o plano, passei a investir com metas e rotina de aporte.",
-    author: "Marina A.",
     role: "Profissional de tecnologia",
     location: "São Paulo/SP"
   },
   {
     text: "Gostei da clareza e do passo a passo. Ter checkpoints e rebalance guiado tirou a ansiedade e me deu consistência.",
-    author: "Ricardo P.",
     role: "Profissional liberal",
     location: "Rio de Janeiro/RJ"
   },
   {
     text: "Eu queria diversificar Brasil + exterior sem complicar. O método deixou simples o que antes parecia confuso.",
-    author: "Fernanda L.",
     role: "Executiva",
     location: "Belo Horizonte/MG"
   }
