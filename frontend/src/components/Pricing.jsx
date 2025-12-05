@@ -108,7 +108,7 @@ const Pricing = () => {
 
               {/* CTA Button */}
               <button
-                onClick={scrollToContact}
+                onClick={() => handlePlanClick(plan.name)}
                 className="w-full py-4 text-base font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 style={{
                   background: plan.recommended ? 'var(--gradient-primary)' : 'rgba(255, 255, 255, 0.08)',
