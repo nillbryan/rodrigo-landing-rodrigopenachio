@@ -107,87 +107,108 @@ user_problem_statement: "Teste completo dos CTAs do site Rodrigo Penachio - Veri
 frontend:
   - task: "Hero Section Primary CTA - Agendar triagem gratuita"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/Hero.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - Hero section primary CTA button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Opens correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "Hero Section Secondary CTA - Receber diagnóstico inicial"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/Hero.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - Hero section secondary CTA button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Opens correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "Pricing Section CTAs - Começar Agora (3 plans)"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/Pricing.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - All 3 pricing plan CTA buttons (Start, Essencial, Wealth)"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - All 3 pricing plan buttons (Start, Essencial, Wealth) open correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "Final CTA Section - Agendar triagem gratuita"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/FinalCTA.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - Final CTA section primary button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Opens correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "Final CTA Section - Receber diagnóstico inicial por e-mail"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/FinalCTA.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - Final CTA section secondary button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Opens correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "Contact Section CTA - Preencher Formulário"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/LeadForm.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - Contact section form CTA button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Opens correct Tally form (https://tally.so/r/q4L452) in new tab without alerts"
 
   - task: "WhatsApp Floating Button"
     implemented: true
-    working: "NA"
+    working: false
     file: "/app/frontend/src/components/WhatsAppButton.jsx"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Initial testing required - WhatsApp floating button visibility after scroll and correct link"
+      - working: false
+        agent: "testing"
+        comment: "❌ FAILED - WhatsApp button appears after scroll >300px (✅) but tooltip expansion and WhatsApp link (wa.me/5511987654321) not working properly. Button is visible but no wa.me links found on page when expanded."
 
 metadata:
   created_by: "testing_agent"
