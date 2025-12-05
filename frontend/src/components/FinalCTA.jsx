@@ -1,25 +1,23 @@
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { trackEvent } from '../utils/analytics';
-
-const CALENDLY_URL = process.env.REACT_APP_CALENDLY_URL;
+import { EXTERNAL_CONFIG } from '../config/external';
 
 const FinalCTA = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector('#contato');
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-  };
-
-  const handleCalendlyClick = () => {
-    trackEvent('calendly_clicked', {
+  const handlePrimaryCTA = () => {
+    trackEvent('cta_clicked', {
       location: 'final_cta',
       cta: 'agendar_triagem'
     });
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleSecondaryCTA = () => {
+    trackEvent('cta_clicked', {
+      location: 'final_cta',
+      cta: 'diagnostico_email'
+    });
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
