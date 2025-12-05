@@ -5,17 +5,13 @@ import { EXTERNAL_CONFIG, isTallyConfigured } from '../config/external';
 
 const LeadForm = () => {
   const handleTallyOpen = () => {
-    if (isTallyConfigured()) {
-      // Track event
-      trackEvent('tally_form_opened', {
-        source: 'lead_form_section'
-      });
-      
-      // Open Tally in new tab
-      window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
-    } else {
-      alert('Formulário ainda não configurado. Configure TALLY_URL em /src/config/external.js');
-    }
+    // Track event
+    trackEvent('tally_form_opened', {
+      source: 'lead_form_section'
+    });
+    
+    // Open Tally in new tab
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   // Check if should use embed or button
