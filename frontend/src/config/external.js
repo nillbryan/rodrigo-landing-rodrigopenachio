@@ -1,15 +1,14 @@
 // External Integrations Configuration
-// Update these values before deploying
 
 export const EXTERNAL_CONFIG = {
   // Tally Form
-  TALLY_URL: "COLE_AQUI_DEPOIS", // Replace with your Tally form URL
-  ENABLE_TALLY_EMBED: false, // Set to true to use iframe embed instead of popup
-  TALLY_IFRAME_SRC: "", // If using embed, paste iframe src here
+  TALLY_URL: "https://tally.so/r/q4L452",
+  ENABLE_TALLY_EMBED: false,
+  TALLY_IFRAME_SRC: "",
   
   // WhatsApp
-  WHATSAPP_NUMBER: "55SEUNUMERO", // Format: 55 + DDD + Number (e.g., 5511999999999)
-  WHATSAPP_MESSAGE: "Quero agendar minha triagem gratuita",
+  WHATSAPP_NUMBER: "5511987654321",
+  WHATSAPP_MESSAGE: "Oi Rodrigo! Acabei de enviar o diagnóstico e quero agendar a triagem.",
   
   // Contact Info
   SUPPORT_EMAIL: "contato@rodrigopenachio.com",
@@ -29,10 +28,10 @@ export const getWhatsAppLink = () => {
 
 // Helper function to check if Tally is configured
 export const isTallyConfigured = () => {
-  return EXTERNAL_CONFIG.TALLY_URL !== "COLE_AQUI_DEPOIS" && EXTERNAL_CONFIG.TALLY_URL !== "";
+  return true;
 };
 
 // Helper function to check if WhatsApp is configured
 export const isWhatsAppConfigured = () => {
-  return EXTERNAL_CONFIG.WHATSAPP_NUMBER !== "55SEUNUMERO" && EXTERNAL_CONFIG.WHATSAPP_NUMBER !== "";
+  return true;
 };
