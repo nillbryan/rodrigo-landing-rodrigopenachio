@@ -52,42 +52,22 @@ const FinalCTA = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {CALENDLY_URL ? (
-            <a
-              href={`${CALENDLY_URL}?utm_source=cta_agendar&utm_medium=final_cta&utm_campaign=landing`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCalendlyClick}
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-              style={{
-                background: 'var(--gradient-primary)',
-                color: 'var(--bg-primary)',
-                borderRadius: '0px',
-                boxShadow: 'var(--shadow-glow-primary)'
-              }}
-            >
-              <Calendar size={20} />
-              Agendar triagem gratuita
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          ) : (
-            <button
-              onClick={scrollToContact}
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-              style={{
-                background: 'var(--gradient-primary)',
-                color: 'var(--bg-primary)',
-                borderRadius: '0px',
-                boxShadow: 'var(--shadow-glow-primary)'
-              }}
-            >
-              <Calendar size={20} />
-              Agendar triagem gratuita
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-            </button>
-          )}
           <button
-            onClick={scrollToContact}
+            onClick={handlePrimaryCTA}
+            className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+            style={{
+              background: 'var(--gradient-primary)',
+              color: 'var(--bg-primary)',
+              borderRadius: '0px',
+              boxShadow: 'var(--shadow-glow-primary)'
+            }}
+          >
+            <Calendar size={20} />
+            Agendar triagem gratuita
+            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+          </button>
+          <button
+            onClick={handleSecondaryCTA}
             className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium transition-all duration-300 hover:bg-white/10"
             style={{
               background: 'rgba(255, 255, 255, 0.08)',
