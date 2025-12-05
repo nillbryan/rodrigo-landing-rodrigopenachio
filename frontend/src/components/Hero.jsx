@@ -21,14 +21,8 @@ const Hero = () => {
       cta: 'primary'
     });
 
-    // Priority: WhatsApp > Tally > Scroll to form
-    if (isWhatsAppConfigured()) {
-      window.open(getWhatsAppLink(), '_blank', 'noopener,noreferrer');
-    } else if (isTallyConfigured()) {
-      window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
-    } else {
-      scrollToContact();
-    }
+    // Open Tally form in new tab
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   const handleSecondaryCTA = () => {
@@ -37,8 +31,8 @@ const Hero = () => {
       cta: 'secondary'
     });
 
-    // Secondary CTA always scrolls to form section
-    scrollToContact();
+    // Open Tally form in new tab
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
