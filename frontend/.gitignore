@@ -1,23 +1,83 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# =========================
+# IDE / Editors
+# =========================
+.idea/
+.vscode/
+*.iml
 
-# dependencies
-/node_modules
-/.pnp
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Node / JS
+# =========================
+node_modules/
+.pnp
 .pnp.js
 
-# testing
-/coverage
+# Yarn Berry (se usar)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.yarn/install-state.gz
 
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# =========================
+# Build / Test outputs
+# =========================
+coverage/
+build/
+dist/
+out/
+.next/
+.cache/
+
+# =========================
+# Env / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+*token.json*
+*credentials.json*
+*.pem
+*.key
+
+# =========================
+# Vercel
+# =========================
+.vercel/
+
+# =========================
+# Emergent / Agents metadata (para parar commits lixo)
+# =========================
+.emergent/
+emergent/
+emergent.yml
+.emergent.yml
+
+# =========================
+# Python (se tiver backend)
+# =========================
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# =========================
+# Misc
+# =========================
+dump.rdb
+.ipynb_checkpoints/
