@@ -1,46 +1,46 @@
-// frontend/src/config/external.js
 // External Integrations Configuration
-// Dica: no Vercel, configure por Environment Variables (REACT_APP_*)
-
-const env = (typeof process !== "undefined" && process.env) ? process.env : {};
-
-const asBool = (v) => String(v || "").toLowerCase() === "true";
-const asStr = (v) => String(v || "").trim();
-const normalizePhone = (v) => asStr(v).replace(/[^\d]/g, "");
 
 export const EXTERNAL_CONFIG = {
-  // Tally
-  TALLY_URL: asStr(env.REACT_APP_TALLY_URL) || "https://tally.so/r/q4L452",
-  ENABLE_TALLY_EMBED: asBool(env.REACT_APP_ENABLE_TALLY_EMBED) || false,
-  TALLY_IFRAME_SRC: asStr(env.REACT_APP_TALLY_IFRAME_SRC) || "",
+  // Tally Form
+  TALLY_URL: "https://tally.so/r/q4L452",
+  ENABLE_TALLY_EMBED: false,
+  // Se quiser embed, use o formato abaixo (o id do seu form é q4L452):
+  // https://tally.so/embed/q4L452?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
+  TALLY_IFRAME_SRC: "https://tally.so/embed/q4L452?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
 
-  // WhatsApp
-  WHATSAPP_NUMBER: asStr(env.REACT_APP_WHATSAPP_NUMBER) || "5511987654321",
-  WHATSAPP_MESSAGE:
-    asStr(env.REACT_APP_WHATSAPP_MESSAGE) ||
-    "Oi Rodrigo! Acabei de enviar o diagnóstico e quero agendar a triagem.",
+  // WhatsApp (somente números: país+DDD+número)
+  WHATSAPP_NUMBER: "5511987654321",
+  WHATSAPP_MESSAGE: "Oi Rodrigo! Acabei de enviar o diagnóstico e quero agendar a triagem.",
 
   // Contact Info
-  SUPPORT_EMAIL: asStr(env.REACT_APP_SUPPORT_EMAIL) || "contato@rodrigopenachio.com",
-  DPO_EMAIL: asStr(env.REACT_APP_DPO_EMAIL) || "privacidade@rodrigopenachio.com",
+  SUPPORT_EMAIL: "contato@rodrigopenachio.com",
+  DPO_EMAIL: "privacidade@rodrigopenachio.com",
 
-  // Social (optional)
-  LINKEDIN_URL: asStr(env.REACT_APP_LINKEDIN_URL) || "",
-  INSTAGRAM_URL: asStr(env.REACT_APP_INSTAGRAM_URL) || ""
+  // Social Media (optional)
+  LINKEDIN_URL: "",
+  INSTAGRAM_URL: ""
 };
 
 export const getWhatsAppLink = () => {
-  const number = normalizePhone(EXTERNAL_CONFIG.WHATSAPP_NUMBER);
-  const msg = asStr(EXTERNAL_CONFIG.WHATSAPP_MESSAGE);
-  if (!number) return "";
-  return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+  const phone = String(EXTERNAL_CONFIG.WHATSAPP_NUMBER || "").replace(/\D/g, "");
+  const msg = String(EXTERNAL_CONFIG.WHATSAPP_MESSAGE || "");
+  const encoded = encodeURIComponent(msg);
+  return `https://wa.me/${phone}?text=${encoded}`;
 };
 
 export const isTallyConfigured = () => {
-  const url = asStr(EXTERNAL_CONFIG.TALLY_URL);
-  return url.startsWith("http");
+  const url = String(EXTERNAL_CONFIG.TALLY_URL || "").trim();
+  if (!url) return false;
+
+  if (EXTERNAL_CONFIG.ENABLE_TALLY_EMBED) {
+    const src = String(EXTERNAL_CONFIG.TALLY_IFRAME_SRC || "").trim();
+    return !!src;
+  }
+
+  return true;
 };
 
 export const isWhatsAppConfigured = () => {
-  return normalizePhone(EXTERNAL_CONFIG.WHATSAPP_NUMBER).length >= 10;
+  const phone = String(EXTERNAL_CONFIG.WHATSAPP_NUMBER || "").replace(/\D/g, "");
+  return phone.length >= 10 && phone.length <= 15;
 };
