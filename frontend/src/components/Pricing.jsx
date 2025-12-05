@@ -1,16 +1,16 @@
 import React from 'react';
 import { Check, Star } from 'lucide-react';
 import { plans } from '../data/mock';
+import { EXTERNAL_CONFIG } from '../config/external';
+import { trackEvent } from '../utils/analytics';
 
 const Pricing = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector('#contato');
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
+  const handlePlanClick = (planName) => {
+    trackEvent('cta_clicked', {
+      location: 'pricing',
+      plan: planName
+    });
+    window.open(EXTERNAL_CONFIG.TALLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
