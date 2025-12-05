@@ -101,3 +101,113 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Teste completo dos CTAs do site Rodrigo Penachio - Verificar que TODOS os botões de CTA abrem o Tally form (https://tally.so/r/q4L452) em nova aba, sem alertas de 'não configurado'."
+
+frontend:
+  - task: "Hero Section Primary CTA - Agendar triagem gratuita"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - Hero section primary CTA button"
+
+  - task: "Hero Section Secondary CTA - Receber diagnóstico inicial"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - Hero section secondary CTA button"
+
+  - task: "Pricing Section CTAs - Começar Agora (3 plans)"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Pricing.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - All 3 pricing plan CTA buttons (Start, Essencial, Wealth)"
+
+  - task: "Final CTA Section - Agendar triagem gratuita"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/FinalCTA.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - Final CTA section primary button"
+
+  - task: "Final CTA Section - Receber diagnóstico inicial por e-mail"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/FinalCTA.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - Final CTA section secondary button"
+
+  - task: "Contact Section CTA - Preencher Formulário"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/LeadForm.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - Contact section form CTA button"
+
+  - task: "WhatsApp Floating Button"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/WhatsAppButton.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Initial testing required - WhatsApp floating button visibility after scroll and correct link"
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+test_plan:
+  current_focus:
+    - "Hero Section Primary CTA - Agendar triagem gratuita"
+    - "Hero Section Secondary CTA - Receber diagnóstico inicial"
+    - "Pricing Section CTAs - Começar Agora (3 plans)"
+    - "Final CTA Section - Agendar triagem gratuita"
+    - "Final CTA Section - Receber diagnóstico inicial por e-mail"
+    - "Contact Section CTA - Preencher Formulário"
+    - "WhatsApp Floating Button"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "sequential"
+
+agent_communication:
+  - agent: "testing"
+    message: "Starting comprehensive CTA testing for Rodrigo Penachio website. Will verify all CTA buttons open Tally form (https://tally.so/r/q4L452) in new tab without alerts."
