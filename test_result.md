@@ -225,7 +225,8 @@ test_plan:
     - "Final CTA Section - Receber diagnóstico inicial por e-mail"
     - "Contact Section CTA - Preencher Formulário"
     - "WhatsApp Floating Button"
-  stuck_tasks: []
+  stuck_tasks: 
+    - "WhatsApp Floating Button"
   test_all: true
   test_priority: "sequential"
 
