@@ -10,7 +10,8 @@ export const siteConfig = {
 
 export const hero = {
   headline: "Investir com clareza. Crescer com método.",
-  subheadline: "Consultoria independente para montar e evoluir seu portfólio com foco em crescimento, renda e proteção.",
+  subheadline:
+    "Consultoria independente para montar e evoluir seu portfólio com foco em crescimento, renda e proteção.",
   bullets: [
     "Carteiras alinhadas às suas metas (Brasil + EUA + Cripto*)",
     "Estratégia clara, execução simples, acompanhamento periódico",
@@ -18,12 +19,14 @@ export const hero = {
   ],
   ctaPrimary: "Agendar triagem gratuita",
   ctaSecondary: "Receber diagnóstico inicial",
-  profileImage: "https://customer-assets.emergentagent.com/job_invest-rodrigo/artifacts/his6l6pq_Gemini_Generated_Image_x4ilxix4ilxix4il.PNG"
+  profileImage:
+    "https://customer-assets.emergentagent.com/job_invest-rodrigo/artifacts/his6l6pq_Gemini_Generated_Image_x4ilxix4ilxix4il.PNG"
 };
 
 export const about = {
   title: "Quem conduz sua estratégia",
-  description: "Rodrigo Penachio oferece Consultoria de Investimentos com foco em alocação inteligente e educação financeira prática. Atua de forma independente, sem conflitos comerciais, ajudando clientes a estruturarem carteiras diversificadas em B3 (ações/FIIs), Renda Fixa, ETFs globais (S&P 500, etc.) e Cripto responsável (BTC/ETH). Metodologia simples, replicável e orientada a metas.",
+  description:
+    "Rodrigo Penachio, engenheiro e especialista em investimentos, oferece Consultoria de Investimentos com foco em alocação inteligente e educação financeira prática. Atua de forma independente, sem conflitos comerciais, ajudando clientes a estruturarem carteiras diversificadas em B3 (ações/FIIs), Renda Fixa, ETFs globais (S&P 500, etc.) e Cripto responsável (BTC/ETH). Metodologia simples, replicável e orientada a metas.",
   badges: ["Independente", "Carteiras por objetivo", "Brasil + Exterior", "Linguagem clara"]
 };
 
@@ -63,7 +66,8 @@ export const howItWorks = [
   {
     step: 2,
     title: "Plano de alocação",
-    description: "Distribuição entre Renda Fixa, Ações/FIIs, ETFs globais, Cripto (quando fizer sentido)."
+    description:
+      "Distribuição entre Renda Fixa, Ações/FIIs, ETFs globais, Cripto (quando fizer sentido)."
   },
   {
     step: 3,
@@ -96,6 +100,7 @@ export const plans = [
     features: [
       "Tudo do Start",
       "Carteira personalizada por objetivos",
+      "Previdência privada e sucessão patrimonial",
       "Revisão trimestral e alertas de rebalance",
       "Checklists de execução e estratégia de aportes",
       "Dúvidas por WhatsApp (horário comercial)"
@@ -118,47 +123,57 @@ export const plans = [
 export const faqs = [
   {
     question: "Faz sentido investir para ter renda extra e estabilidade?",
-    answer: "Sim, desde que você tenha reserva de emergência e metas claras. Renda recorrente vem de carteiras bem distribuídas (renda fixa + ações/FIIs + ETFs globais) e aporte contínuo, não de 'atalhos'."
+    answer:
+      "Sim, desde que você tenha reserva de emergência e metas claras. Renda recorrente vem de carteiras bem distribuídas (renda fixa + ações/FIIs + ETFs globais) e aporte contínuo, não de 'atalhos'."
   },
   {
     question: "Dá para 'viver de rendimentos'?",
-    answer: "É possível, mas exige patrimônio suficiente, tempo e disciplina. A consultoria mostra o caminho (taxa segura de retirada, diversificação e riscos), sem prometer prazos irreais."
+    answer:
+      "É possível, mas exige patrimônio suficiente, tempo e disciplina. A consultoria mostra o caminho (taxa segura de retirada, diversificação e riscos), sem prometer prazos irreais."
   },
   {
     question: "Onde investir: Criptomoedas, B3 ou S&P 500?",
-    answer: "Depende do objetivo e do seu perfil. Cripto: potencial e volatilidade alta; usamos percentual pequeno e só as principais (BTC/ETH). B3: ações e FIIs para renda e crescimento local. S&P 500/ETFs globais: diversificação em dólar e qualidade. O plano combina as classes com regras de risco e rebalance."
+    answer:
+      "Depende do objetivo e do seu perfil. Cripto: potencial e volatilidade alta; usamos percentual pequeno e só as principais (BTC/ETH). B3: ações e FIIs para renda e crescimento local. S&P 500/ETFs globais: diversificação em dólar e qualidade. O plano combina as classes com regras de risco e rebalance."
   },
   {
     question: "Qual o valor mínimo para começar?",
-    answer: "Com pouco capital já dá para montar uma base. Ajustamos a complexidade da carteira ao seu patrimônio e metas."
+    answer:
+      "Com pouco capital já dá para montar uma base. Ajustamos a complexidade da carteira ao seu patrimônio e metas."
   },
   {
     question: "A consultoria é independente?",
-    answer: "Sim. Sem comissões de produtos. O interesse do cliente vem primeiro."
+    answer:
+      "Sim. Sem comissões de produtos. O interesse do cliente vem primeiro."
   },
   {
     question: "Vocês 'batem o mercado'?",
-    answer: "Objetivo é bater seus objetivos. Priorizamos consistência e gestão de risco, não bravatas."
+    answer:
+      "Objetivo é bater seus objetivos. Priorizamos consistência e gestão de risco, não bravatas."
   },
   {
     question: "Como é o acompanhamento?",
-    answer: "Revisões periódicas + alertas de rebalance. Tudo registrado no seu Painel do Cliente."
+    answer:
+      "Revisões periódicas + alertas de rebalance. Tudo registrado no seu Painel do Cliente."
   }
 ];
 
 export const testimonials = [
   {
-    text: "Eu tinha investimentos soltos e sem direção. Com o diagnóstico e o plano, passei a investir com metas e rotina de aporte.",
+    text:
+      "Eu tinha investimentos soltos e sem direção. Com o diagnóstico e o plano, passei a investir com metas e rotina de aporte.",
     role: "Profissional de tecnologia",
     location: "São Paulo/SP"
   },
   {
-    text: "Gostei da clareza e do passo a passo. Ter checkpoints e rebalance guiado tirou a ansiedade e me deu consistência.",
+    text:
+      "Gostei da clareza e do passo a passo. Ter checkpoints e rebalance guiado tirou a ansiedade e me deu consistência.",
     role: "Profissional liberal",
     location: "Rio de Janeiro/RJ"
   },
   {
-    text: "Eu queria diversificar Brasil + exterior sem complicar. O método deixou simples o que antes parecia confuso.",
+    text:
+      "Eu queria diversificar Brasil + exterior sem complicar. O método deixou simples o que antes parecia confuso.",
     role: "Executiva",
     location: "Belo Horizonte/MG"
   }
