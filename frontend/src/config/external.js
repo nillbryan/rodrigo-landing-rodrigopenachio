@@ -6,11 +6,14 @@ export const EXTERNAL_CONFIG = {
   ENABLE_TALLY_EMBED: false,
   // Se quiser embed, use o formato abaixo (o id do seu form é q4L452):
   // https://tally.so/embed/q4L452?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
-  TALLY_IFRAME_SRC: "https://tally.so/embed/q4L452?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+  TALLY_IFRAME_SRC:
+    "https://tally.so/embed/q4L452?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
 
   // WhatsApp (somente números: país+DDD+número)
+  // Mantemos configurado para uso interno, mas o botão está desativado em isWhatsAppConfigured().
   WHATSAPP_NUMBER: "5511987654321",
-  WHATSAPP_MESSAGE: "Oi Rodrigo! Acabei de enviar o diagnóstico e quero agendar a triagem.",
+  WHATSAPP_MESSAGE:
+    "Oi Rodrigo! Acabei de enviar o diagnóstico e quero agendar a triagem.",
 
   // Contact Info
   SUPPORT_EMAIL: "contato@rodrigopenachio.com",
@@ -41,6 +44,11 @@ export const isTallyConfigured = () => {
 };
 
 export const isWhatsAppConfigured = () => {
-  const phone = String(EXTERNAL_CONFIG.WHATSAPP_NUMBER || "").replace(/\D/g, "");
-  return phone.length >= 10 && phone.length <= 15;
+  // TEMPORARIAMENTE DESATIVADO:
+  // Sempre retorna false para esconder o botão de WhatsApp na landing.
+  return false;
+
+  // Lógica original (para reativar no futuro):
+  // const phone = String(EXTERNAL_CONFIG.WHATSAPP_NUMBER || "").replace(/\D/g, "");
+  // return phone.length >= 10 && phone.length <= 15;
 };
